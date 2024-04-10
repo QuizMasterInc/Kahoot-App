@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+#question-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#question {
+    font-size: 24px;
+}
+
+#options {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+#countdown {
+    font-size: 18px;
+    margin-top: 20px;
+}
+

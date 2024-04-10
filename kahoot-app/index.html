@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="question-container">
+        <h1 id="question">Question 1: What is your favorite color?</h1>
+        <div id="options">
+            <label><input type="radio" name="answer" value="a"> Option A</label><br>
+            <label><input type="radio" name="answer" value="b"> Option B</label><br>
+            <label><input type="radio" name="answer" value="c"> Option C</label><br>
+            <label><input type="radio" name="answer" value="d"> Option D</label><br>
+        </div>
+        <button onclick="checkAnswer()">Submit</button>
+        <div id="countdown"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
