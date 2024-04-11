@@ -1,4 +1,4 @@
-let currentQuestion = 1;
+/*let currentQuestion = 1;
 let timer;
 
 function displayQuestion() {
@@ -53,3 +53,4 @@ window.onload = function() {
     displayQuestion();
     startCountdown(10); // Change the countdown time for each question
 };
+*/

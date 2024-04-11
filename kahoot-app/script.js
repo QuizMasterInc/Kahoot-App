@@ -1,20 +1,20 @@
-let currentQuestion = 0; // Changed to start from 0
+let currentQuestion = 0;
 let timer;
 const questions = [
     {
-        question: "Question 1: What is your favorite color?",
+        question: "What is your favorite color?",
         options: ["Red", "Blue", "Green", "Yellow"],
-        correctAnswer: "a"
+        correctAnswer: 0
     },
     {
-        question: "Question 2: What is your favorite food?",
+        question: "What is your favorite food?",
         options: ["Pizza", "Sushi", "Burger", "Salad"],
-        correctAnswer: "b"
+        correctAnswer: 1
     },
     {
-        question: "Question 3: What is your favorite animal?",
+        question: "What is your favorite animal?",
         options: ["Dog", "Cat", "Bird", "Fish"],
-        correctAnswer: "c"
+        correctAnswer: 2
     }
 ];
 
@@ -30,11 +30,10 @@ function displayQuestion() {
         const input = document.createElement('input');
         input.type = 'radio';
         input.name = 'answer';
-        input.value = String.fromCharCode(97 + index); // Convert index to corresponding letter (a, b, c, d)
+        input.value = index;
         label.appendChild(input);
         label.appendChild(document.createTextNode(` ${option}`));
         optionsDiv.appendChild(label);
-        optionsDiv.appendChild(document.createElement('br'));
     });
 }
 
@@ -46,8 +45,8 @@ function startCountdown(seconds) {
         if (timeLeft <= 0) {
             clearInterval(timer);
             currentQuestion++;
-            if (currentQuestion >= questions.length) { // Changed condition to handle end of questions
-                document.getElementById('question-container').innerHTML = '<h1>Thank you for answering!</h1>';
+            if (currentQuestion >= questions.length) {
+                endQuiz();
             } else {
                 displayQuestion();
                 startCountdown(10); // Change the countdown time for each question
@@ -62,10 +61,10 @@ function checkAnswer() {
     const selectedOption = document.querySelector('input[name="answer"]:checked');
 
     if (selectedOption) {
-        const answer = selectedOption.value;
+        const answerIndex = parseInt(selectedOption.value);
         const currentQuestionObj = questions[currentQuestion];
-        
-        if (answer === currentQuestionObj.correctAnswer) {
+
+        if (answerIndex === currentQuestionObj.correctAnswer) {
             console.log('Correct answer!');
         } else {
             console.log('Incorrect answer!');
@@ -73,8 +72,8 @@ function checkAnswer() {
 
         clearInterval(timer); // Stop the countdown
         currentQuestion++;
-        if (currentQuestion >= questions.length) { // Changed condition to handle end of questions
-            document.getElementById('question-container').innerHTML = '<h1>Thank you for answering!</h1>';
+        if (currentQuestion >= questions.length) {
+            endQuiz();
         } else {
             displayQuestion();
             startCountdown(10); // Change the countdown time for each question
@@ -84,9 +83,12 @@ function checkAnswer() {
     }
 }
 
+function endQuiz() {
+    document.getElementById('quiz-container').innerHTML = '<h1>Thank you for answering!</h1>';
+}
+
 // Start the countdown when the page loads
 window.onload = function() {
     displayQuestion();
     startCountdown(10); // Change the countdown time for each question
 };
-

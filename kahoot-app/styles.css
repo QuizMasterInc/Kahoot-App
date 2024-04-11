@@ -2,24 +2,47 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 50px;
+    background-color: #9c9494;
 }
 
-#question-container {
+#quiz-container {
     max-width: 600px;
     margin: 0 auto;
+    background-color: #c25bc2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #question {
     font-size: 24px;
+    margin-bottom: 20px;
 }
 
-#options {
-    text-align: left;
+label {
+    display: block;
     margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ac327d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a045a0;
 }
 
 #countdown {
     font-size: 18px;
     margin-top: 20px;
 }
-
