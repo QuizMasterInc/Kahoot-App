@@ -34,6 +34,16 @@ function displayQuestion() {
         label.appendChild(input);
         label.appendChild(document.createTextNode(` ${option}`));
         optionsDiv.appendChild(label);
+
+        // Add event listener to update selected option style
+        input.addEventListener('click', function() {
+            const allLabels = document.querySelectorAll('#options label');
+            allLabels.forEach(label => label.classList.remove('selected'));
+
+            if (input.checked) {
+                label.classList.add('selected');
+            }
+        });
     });
 }
 
