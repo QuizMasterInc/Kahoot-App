@@ -1,22 +1,28 @@
 let currentQuestion = 0;
 let timer;
-let score = 0; // Initialize the score variable
+let score = 0;
+let chosenCategory;
+
 const questions = [
     {
-        question: "What is my favorite color?",
-        options: ["Red", "Purple", "Green", "Yellow"],
+        category: "Computer Science",
+        question: "What is a variable in programming?",
+        options: ["A value that cannot be changed", "A container for storing data values", "A mathematical operation", "A condition for decision making"],
         correctAnswer: 1
     },
     {
-        question: "What is my favorite food?",
-        options: ["Pizza", "Sushi", "Burger", "Salad"],
-        correctAnswer: 2
+        category: "Entertainment",
+        question: "Who is the director of the movie 'Inception'?",
+        options: ["Christopher Nolan", "Steven Spielberg", "Martin Scorsese", "Quentin Tarantino"],
+        correctAnswer: 0
     },
     {
-        question: "What is my favorite animal?",
-        options: ["Dog", "Cat", "Horse", "Chinchila"],
-        correctAnswer: 0
-    }
+        category: "Geography",
+        question: "What is the capital city of France?",
+        options: ["Berlin", "Madrid", "Rome", "Paris"],
+        correctAnswer: 3
+    },
+    // Add more questions for different categories...
 ];
 
 function displayQuestion() {
@@ -30,20 +36,18 @@ function displayQuestion() {
         const label = document.createElement('label');
         const input = document.createElement('input');
         input.type = 'radio';
-        input.name = 'answer'; // Ensure all radio inputs for answers have the same name
+        input.name = 'answer';
         input.value = index;
         label.appendChild(input);
         label.appendChild(document.createTextNode(` ${option}`));
         optionsDiv.appendChild(label);
     });
-    
-    
 }
 
 function startCountdown(seconds) {
     let timeLeft = seconds;
     timer = setInterval(function() {
-        document.getElementById('countdown-text').innerText = `Time left: ${timeLeft} seconds`;
+        document.getElementById('countdown-text').innerText = `Time Left: ${timeLeft} seconds`;
 
         if (timeLeft <= 0) {
             clearInterval(timer);
@@ -52,7 +56,7 @@ function startCountdown(seconds) {
                 endQuiz();
             } else {
                 displayQuestion();
-                startCountdown(10); // Change the countdown time for each question
+                startCountdown(10);
             }
         }
 
@@ -69,18 +73,18 @@ function checkAnswer() {
 
         if (answerIndex === currentQuestionObj.correctAnswer) {
             console.log('Correct answer!');
-            score++; // Increase the score if the answer is correct
+            score++;
         } else {
             console.log('Incorrect answer!');
         }
 
-        clearInterval(timer); // Stop the countdown
+        clearInterval(timer);
         currentQuestion++;
         if (currentQuestion >= questions.length) {
             endQuiz();
         } else {
             displayQuestion();
-            startCountdown(10); // Change the countdown time for each question
+            startCountdown(10);
         }
     } else {
         alert('Please select an option!');
@@ -88,32 +92,9 @@ function checkAnswer() {
 }
 
 function endQuiz() {
-    let incorrectQuestions = [];
-
-    questions.forEach((question, index) => {
-        const selectedOption = document.querySelector(`input[name="answer${index}"]:checked`);
-
-        if (selectedOption) {
-            const answerIndex = parseInt(selectedOption.value);
-            if (answerIndex !== question.correctAnswer) {
-                incorrectQuestions.push({ question: question.question, correctAnswer: question.options[question.correctAnswer], selectedAnswer: question.options[answerIndex] });
-            }
-        } else {
-            incorrectQuestions.push({ question: question.question, correctAnswer: question.options[question.correctAnswer], selectedAnswer: 'Not answered' });
-        }
-    });
-
     let resultHTML = `<h1>Quiz Results</h1>`;
     resultHTML += `<p>Your score: ${score}/${questions.length}</p>`;
-
-    if (incorrectQuestions.length > 0) {
-       
-
-        resultHTML += `<button onclick="showCorrectAnswers()">Show Correct Answers</button>`;
-    } else {
-        resultHTML += `<p>Congratulations! You got all the answers correct!</p>`;
-    }
-
+    resultHTML += `<button onclick="showCorrectAnswers()" class="show-answers-button">Show Correct Answers</button>`;
     document.getElementById('quiz-container').innerHTML = resultHTML;
 }
 
@@ -127,8 +108,25 @@ function showCorrectAnswers() {
     document.getElementById('quiz-container').innerHTML += correctAnswersHTML;
 }
 
-// Start the countdown when the page loads
+function startQuiz() {
+    const categorySelect = document.getElementById('category-select');
+    chosenCategory = categorySelect.value;
+
+    const filteredQuestions = questions.filter(question => question.category === chosenCategory);
+    if (filteredQuestions.length > 0) {
+        currentQuestion = 0;
+        questions.splice(0, questions.length, ...filteredQuestions);
+
+        document.getElementById('category-selection').style.display = 'none';
+        document.getElementById('quiz-container').style.display = 'block';
+
+        displayQuestion();
+        startCountdown(10);
+    } else {
+        alert('No questions found for the selected category.');
+    }
+}
+
 window.onload = function() {
     displayQuestion();
-    startCountdown(10); // Change the countdown time for each question
 };

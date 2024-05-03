@@ -7,20 +7,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="quiz-container">
+    <div id="category-selection" class="category-selection-container">
+        <h1>Select a Category</h1>
+        <select id="category-select">
+            <option value="Computer Science">Computer Science</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Geography">Geography</option>
+            <option value="History">History</option>
+            <option value="Math">Math</option>
+            <option value="Science">Science</option>
+            <option value="Sports">Sports</option>
+        </select>
+        <button onclick="startQuiz()" class="start-button">Start Quiz</button>
+    </div>
+
+    <div id="quiz-container" class="quiz-container" style="display: none;">
         <div class="question-box">
             <div class="question-header">
-                
                 <h1 id="question">Question 1</h1>
             </div>
             <div id="options" class="options-container"></div>
             <button onclick="checkAnswer()" class="submit-button">Submit</button>
         </div>
         <div id="countdown" class="countdown-container">
-            
             <span id="countdown-text">Time Left: 10 seconds</span>
         </div>
-        
     </div>
 
     <script src="script.js"></script>
