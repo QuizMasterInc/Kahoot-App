@@ -1,0 +1,19 @@
+{
+  "name": "kahoot-app",
+  "version": "0.5.0",
+  "description": "the app for the quiz",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./kahoot-app/index.html --dist-dir dist",
+    "build": "parcel build --dist-dir dist ./kahoot-app/index.html"
+  },
+  "keywords": [],
+  "author": "Hamzeh Albaz",
+  "license": "ISC",
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "firebase": "^10.11.1",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  }
+}

@@ -1,0 +1,123 @@
+body {
+  text-align: center;
+  background-color: #9c9494;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.category-selection-container {
+  background-color: #eaeaea;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0 10px #0000001a;
+}
+
+#category-select {
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.category-selection-container h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.start-button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #a74caf;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 30px;
+  transition: background-color .3s;
+}
+
+.start-button:hover {
+  background-color: #a04585;
+}
+
+.quiz-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+}
+
+.question-box {
+  background-color: #583058;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0 10px #0000001a;
+}
+
+.question-header {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.question-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.options-container label {
+  color: #fff;
+  cursor: pointer;
+  background-color: #d157a2;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  transition: background-color .3s;
+  display: block;
+}
+
+.options-container label:hover {
+  background-color: #a045a0;
+}
+
+.options-container label.selected {
+  background-color: #6c2058;
+}
+
+.submit-button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #1d1b1c;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: background-color .3s;
+}
+
+.submit-button:hover {
+  background-color: #aa7baa;
+}
+
+.countdown-container {
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  display: flex;
+}
+
+#countdown-text {
+  color: #fff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=index.183f3927.css.map */

@@ -1,19 +1,24 @@
 // Import the functions you need from the SDKs you need
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-import { getFirestore, collection, getDocs, query, where  } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+// import { getFirestore, collection, getDocs, query, where  } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+
+
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs, query, where  } from 'firebase/firestore';
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDGqWTZtmxOMfylYYkiN7FXjJqjTnY6FaQ",
-  authDomain: "quizmaster-c66a2.firebaseapp.com",
-  projectId: "quizmaster-c66a2",
-  storageBucket: "quizmaster-c66a2.appspot.com",
-  messagingSenderId: "991033062979",
-  appId: "1:991033062979:web:4b69badce5fc80ef8d86f6"
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MSG_SENDER_ID,
+  appId: process.env.APP_ID
 };
 
 let currentQuestion = 0;

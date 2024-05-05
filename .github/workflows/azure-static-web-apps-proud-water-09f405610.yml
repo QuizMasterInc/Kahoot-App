@@ -14,11 +14,32 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+
     steps:
       - uses: actions/checkout@v3
         with:
           submodules: true
           lfs: false
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v1
+        with: 
+          node-version: '20.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build # This should use Parcel to build your project and output to dist/
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          AUTH_DOMAIN : ${{ secrets.AUTH_DOMAIN }}
+          PROJECT_ID : ${{ secrets.PROJECT_ID }}
+          STORAGE_BUCKET : ${{ secrets.STORAGE_BUCKET }}
+          MSG_SENDER_ID : ${{ secrets.MSG_SENDER_ID }}
+          APP_ID : ${{ secrets.APP_ID }}
+  
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -28,10 +49,28 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "./kahoot-app" # App source code path
+          app_location: "/dist" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "." # Built app content directory - optional
+          output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          AUTH_DOMAIN : ${{ secrets.AUTH_DOMAIN }}
+          PROJECT_ID : ${{ secrets.PROJECT_ID }}
+          STORAGE_BUCKET : ${{ secrets.STORAGE_BUCKET }}
+          MSG_SENDER_ID : ${{ secrets.MSG_SENDER_ID }}
+          APP_ID : ${{ secrets.APP_ID }}
+
+      - name: Log Environment Variables
+        run: |
+          if [ -z "${{ secrets.API_KEY }}" ]; then
+            echo "API_KEY is not set"
+          else
+            echo "API_KEY is set"
+          fi
+        env:
+            NODE_ENV: 'production'  # Example of setting a local environment variable
+            API_KEY: ${{ secrets.API_KEY }}  # Ensure this matches your secret's name
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'

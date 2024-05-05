@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const startButton = document.getElementById('start-button');
 
     let debugStartButton = false;
-    
+
     if (startButton) {
         startButton.addEventListener('click', async function() {
 
