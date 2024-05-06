@@ -34,7 +34,7 @@ const app = initializeApp(firebaseConfig);
 var db = getFirestore(app);
 
 // Reference to your collection
-const collectionRef = collection(db, 'default-questions');
+const collectionRef = collection(db, 'quizzes');
 
 function debugShowAllQuestionsBeforeFormat(bool) {
     if (bool) {
@@ -54,9 +54,9 @@ debugShowAllQuestionsBeforeFormat(false)
 
 
  export async function fetchQuestions(chosenCategory) {
-     // filters the entire question bank from the database selected (default-questions)
+     // filters the entire question bank from the database selected (quizzes)
      // the filter being put on this is the category chosen by user at runtime
-    const q = query(collection(db, 'default-questions'), where('category', '==', chosenCategory)); 
+    const q = query(collection(db, 'quizzes'), where('category', '==', chosenCategory)); 
 
     const querySnapshot = await getDocs(q);
 
