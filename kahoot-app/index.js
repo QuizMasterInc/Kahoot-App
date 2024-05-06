@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-// import { getFirestore, collection, getDocs, query, where  } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+import { getFirestore, collection, getDocs, query, where  } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
 
 
 import { initializeApp } from 'firebase/app';
@@ -34,7 +34,7 @@ const app = initializeApp(firebaseConfig);
 var db = getFirestore(app);
 
 // Reference to your collection
-const collectionRef = collection(db, 'quizzes');
+const collectionRef = collection(db, 'default-questions');
 
 function debugShowAllQuestionsBeforeFormat(bool) {
     if (bool) {
@@ -54,9 +54,9 @@ debugShowAllQuestionsBeforeFormat(false)
 
 
  export async function fetchQuestions(chosenCategory) {
-     // filters the entire question bank from the database selected (quizzes)
+     // filters the entire question bank from the database selected (default-questions)
      // the filter being put on this is the category chosen by user at runtime
-    const q = query(collection(db, 'quizzes'), where('category', '==', chosenCategory)); 
+    const q = query(collection(db, 'default-questions'), where('category', '==', chosenCategory)); 
 
     const querySnapshot = await getDocs(q);
 
