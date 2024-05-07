@@ -14,6 +14,11 @@
 
 </head>
 <body>
+
+    <div id="mode-buttons" class="mode-buttons">
+        <button id="light-mode-button" onclick="toggleLightMode()">Light Mode</button>
+        <button id="dark-mode-button" onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
      
      
 
@@ -48,6 +53,16 @@
 
    
     <script type="module" src="index.js"></script>
+
+    <script>
+        function toggleLightMode() {
+            document.body.classList.remove("dark-mode");
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.add("dark-mode");
+        }
+</script>
 
 </body>
 </html>

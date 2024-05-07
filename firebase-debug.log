@@ -1,0 +1,132 @@
+[debug] [2024-05-06T13:40:43.861Z] ----------------------------------------------------------------------
+[debug] [2024-05-06T13:40:43.866Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ahmad\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-05-06T13:40:43.867Z] CLI Version:   13.8.0
+[debug] [2024-05-06T13:40:43.868Z] Platform:      win32
+[debug] [2024-05-06T13:40:43.868Z] Node Version:  v21.6.1
+[debug] [2024-05-06T13:40:43.868Z] Time:          Mon May 06 2024 08:40:43 GMT-0500 (Central Daylight Time)
+[debug] [2024-05-06T13:40:43.869Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-06T13:40:43.885Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-06T13:40:43.886Z] > authorizing via signed-in user (ahmadoyousuf@lewisu.edu)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\ahmad\lewis\cpsc-44000\sprint-7\Kahoot-App
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-05-06T13:42:01.280Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-05-06T13:42:02.902Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-05-06T13:42:02.903Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project quizmaster-c66a2 (quizmaster) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2024-05-06T13:42:13.884Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-05-06T13:42:13.884Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/quizmaster-c66a2
+[debug] [2024-05-06T13:42:14.870Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firebasedatabase.googleapis.com 200
+[debug] [2024-05-06T13:42:14.870Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firebasedatabase.googleapis.com [omitted]
+[warn] !  database: missing required API firebasedatabase.googleapis.com. Enabling now... 
+[debug] [2024-05-06T13:42:14.872Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firebasedatabase.googleapis.com:enable [none]
+[debug] [2024-05-06T13:42:14.872Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firebasedatabase.googleapis.com:enable x-goog-quota-user=projects/quizmaster-c66a2
+[debug] [2024-05-06T13:42:15.387Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firebasedatabase.googleapis.com:enable 200
+[debug] [2024-05-06T13:42:15.388Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firebasedatabase.googleapis.com:enable [omitted]
+[debug] [2024-05-06T13:42:25.400Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-05-06T13:42:25.401Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/quizmaster-c66a2
+[debug] [2024-05-06T13:42:26.138Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firebasedatabase.googleapis.com 200
+[debug] [2024-05-06T13:42:26.139Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2024-05-06T13:42:26.148Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quizmaster-c66a2 [none]
+[debug] [2024-05-06T13:42:26.648Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quizmaster-c66a2 200
+[debug] [2024-05-06T13:42:26.649Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quizmaster-c66a2 {"projectId":"quizmaster-c66a2","projectNumber":"991033062979","displayName":"quizmaster","name":"projects/quizmaster-c66a2","resources":{"hostingSite":"quizmaster-c66a2","storageBucket":"quizmaster-c66a2.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_9d159365-bce2-46e4-bb3a-2071306fe973"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[info] +  Default rules have been written to database.rules.json. 
+[info] Future modifications to database.rules.json will update Realtime Database Security Rules when you run
+[info] firebase deploy.
+[info] 
+=== Firestore Setup
+[debug] [2024-05-06T13:43:05.598Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firestore.googleapis.com [none]
+[debug] [2024-05-06T13:43:05.599Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firestore.googleapis.com x-goog-quota-user=projects/quizmaster-c66a2
+[debug] [2024-05-06T13:43:06.000Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firestore.googleapis.com 200
+[debug] [2024-05-06T13:43:06.001Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/firestore.googleapis.com [omitted]
+[debug] [2024-05-06T13:43:06.001Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/quizmaster-c66a2/databases/(default) [none]
+[debug] [2024-05-06T13:43:06.682Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/quizmaster-c66a2/databases/(default) 200
+[debug] [2024-05-06T13:43:06.682Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/quizmaster-c66a2/databases/(default) {"name":"projects/quizmaster-c66a2/databases/(default)","uid":"68fa7530-a16a-4ffe-834c-3ff2d392feec","createTime":"2023-01-18T05:01:12.324228Z","updateTime":"2023-01-18T05:01:12.324228Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-05-06T12:43:05.534594Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"INej9/2T+YUDMO71oran4IUD"}
+[debug] [2024-05-06T13:43:06.682Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-05-06T13:43:06.683Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-06T13:43:06.683Z] > authorizing via signed-in user (ahmadoyousuf@lewisu.edu)
+[debug] [2024-05-06T13:43:06.683Z] [iam] checking project quizmaster-c66a2 for permissions ["firebase.projects.get"]
+[debug] [2024-05-06T13:43:06.684Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/quizmaster-c66a2:testIamPermissions [none]
+[debug] [2024-05-06T13:43:06.684Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/quizmaster-c66a2:testIamPermissions x-goog-quota-user=projects/quizmaster-c66a2
+[debug] [2024-05-06T13:43:06.684Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quizmaster-c66a2:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-05-06T13:43:07.179Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/quizmaster-c66a2:testIamPermissions 200
+[debug] [2024-05-06T13:43:07.179Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quizmaster-c66a2:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-05-06T13:43:09.751Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/quizmaster-c66a2/releases pageSize=10&pageToken=
+[debug] [2024-05-06T13:43:10.311Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/quizmaster-c66a2/releases 200
+[debug] [2024-05-06T13:43:10.311Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/quizmaster-c66a2/releases {"releases":[{"name":"projects/quizmaster-c66a2/releases/cloud.firestore","rulesetName":"projects/quizmaster-c66a2/rulesets/42117767-1f52-4f83-9007-317f8f46bb1e","createTime":"2023-01-18T05:01:16.455706Z","updateTime":"2024-05-06T09:50:58.045940Z"}]}
+[debug] [2024-05-06T13:43:10.312Z] Found ruleset: projects/quizmaster-c66a2/rulesets/42117767-1f52-4f83-9007-317f8f46bb1e
+[debug] [2024-05-06T13:43:10.312Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/quizmaster-c66a2/rulesets/42117767-1f52-4f83-9007-317f8f46bb1e [none]
+[debug] [2024-05-06T13:43:10.391Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/quizmaster-c66a2/rulesets/42117767-1f52-4f83-9007-317f8f46bb1e 200
+[debug] [2024-05-06T13:43:10.392Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/quizmaster-c66a2/rulesets/42117767-1f52-4f83-9007-317f8f46bb1e [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-05-06T13:43:11.804Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/quizmaster-c66a2/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2024-05-06T13:43:11.808Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/quizmaster-c66a2/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2024-05-06T13:43:12.192Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/quizmaster-c66a2/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2024-05-06T13:43:12.192Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/quizmaster-c66a2/databases/(default)/collectionGroups/-/indexes {"indexes":[{"name":"projects/quizmaster-c66a2/databases/(default)/collectionGroups/default-questions/indexes/CICAgJim14AK","queryScope":"COLLECTION","fields":[{"fieldPath":"category","order":"ASCENDING"},{"fieldPath":"`sub-category`","order":"ASCENDING"},{"fieldPath":"__name__","order":"ASCENDING"}],"state":"READY"},{"name":"projects/quizmaster-c66a2/databases/(default)/collectionGroups/default-questions/indexes/CICAgJiUpoMK","queryScope":"COLLECTION","fields":[{"fieldPath":"category","order":"ASCENDING"},{"fieldPath":"question","order":"ASCENDING"},{"fieldPath":"__name__","order":"ASCENDING"}],"state":"READY"}]}
+[debug] [2024-05-06T13:43:12.714Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/quizmaster-c66a2/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2024-05-06T13:43:12.714Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/quizmaster-c66a2/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/quizmaster-c66a2/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] 
+=== Functions Setup
+[debug] [2024-05-06T13:43:12.720Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-06T13:43:12.721Z] > authorizing via signed-in user (ahmadoyousuf@lewisu.edu)
+[debug] [2024-05-06T13:43:12.721Z] [iam] checking project quizmaster-c66a2 for permissions ["firebase.projects.get"]
+[debug] [2024-05-06T13:43:12.721Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/quizmaster-c66a2:testIamPermissions [none]
+[debug] [2024-05-06T13:43:12.721Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/quizmaster-c66a2:testIamPermissions x-goog-quota-user=projects/quizmaster-c66a2
+[debug] [2024-05-06T13:43:12.721Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quizmaster-c66a2:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-05-06T13:43:13.208Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/quizmaster-c66a2:testIamPermissions 200
+[debug] [2024-05-06T13:43:13.208Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quizmaster-c66a2:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-05-06T13:43:13.209Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-05-06T13:43:13.209Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/quizmaster-c66a2
+[debug] [2024-05-06T13:43:13.213Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-05-06T13:43:13.213Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/quizmaster-c66a2
+[debug] [2024-05-06T13:43:14.070Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/cloudfunctions.googleapis.com 200
+[debug] [2024-05-06T13:43:14.070Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2024-05-06T13:43:14.071Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/runtimeconfig.googleapis.com 200
+[debug] [2024-05-06T13:43:14.071Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/quizmaster-c66a2/services/runtimeconfig.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] +  Wrote functions/package.json 
+[info] +  Wrote functions/index.js 
+[info] +  Wrote functions/.gitignore 
